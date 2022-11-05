@@ -28,9 +28,15 @@ extension NetworkManager: NetworkManagerProtocol {
 
         let config = URLSessionConfiguration.default
         config.httpAdditionalHeaders = ["Authorization": "Bearer \(accessToken)"]
-
+        
         let session = URLSession(configuration: config)
-        let (data, _) = try await session.data(from: url)
+        let (data, response) = try await session.data(from: url)
+        
+        Logger.log(.debug, message: "NetworkManager received data: \(String(data: data, encoding: .utf8))")
+        if let response = response as? HTTPURLResponse, response.statusCode != 200 {
+            let error = try JSONDecoder().decode(ErrorResponseModel.self, from: data)
+            throw APIError.generic(message: error.description)
+        }
         return data
     }
 }

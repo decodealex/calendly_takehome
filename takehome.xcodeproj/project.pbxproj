@@ -30,6 +30,8 @@
 		0759792328EE13A500EF2DFA /* AccountRemoteDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0759792228EE13A500EF2DFA /* AccountRemoteDataSource.swift */; };
 		0759792528EE13B000EF2DFA /* AccountRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0759792428EE13B000EF2DFA /* AccountRepository.swift */; };
 		07CC135028F60A4C00CF08F3 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 07CC134F28F60A4C00CF08F3 /* README.md */; };
+		52662C052917264900584BDE /* ErrorResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52662C042917264900584BDE /* ErrorResponseModel.swift */; };
+		52662C082917281A00584BDE /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52662C072917281A00584BDE /* Logger.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,6 +71,8 @@
 		0759792228EE13A500EF2DFA /* AccountRemoteDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountRemoteDataSource.swift; sourceTree = "<group>"; };
 		0759792428EE13B000EF2DFA /* AccountRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountRepository.swift; sourceTree = "<group>"; };
 		07CC134F28F60A4C00CF08F3 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		52662C042917264900584BDE /* ErrorResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorResponseModel.swift; sourceTree = "<group>"; };
+		52662C072917281A00584BDE /* Logger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,6 +115,7 @@
 		0714B16528E7E4C900E7F2BE /* takehome */ = {
 			isa = PBXGroup;
 			children = (
+				52662C062917280F00584BDE /* Utilities */,
 				0747A3BB28EDCF4900CD5187 /* Data */,
 				0747A3A828ECD3D700CD5187 /* NetworkManager */,
 				0747A39D28ECD25400CD5187 /* Event Types */,
@@ -147,6 +152,7 @@
 			isa = PBXGroup;
 			children = (
 				075520B628EC69AC00B3A0A9 /* NetworkManager.swift */,
+				52662C042917264900584BDE /* ErrorResponseModel.swift */,
 			);
 			path = NetworkManager;
 			sourceTree = "<group>";
@@ -199,6 +205,14 @@
 				0759792028EE139900EF2DFA /* Account.swift */,
 			);
 			path = Account;
+			sourceTree = "<group>";
+		};
+		52662C062917280F00584BDE /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				52662C072917281A00584BDE /* Logger.swift */,
+			);
+			path = Utilities;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -304,9 +318,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				52662C082917281A00584BDE /* Logger.swift in Sources */,
 				0747A3C328EDD8EF00CD5187 /* EventType.swift in Sources */,
 				075520B728EC69AC00B3A0A9 /* NetworkManager.swift in Sources */,
 				0747A3B328ECD5A700CD5187 /* UIView+Autolayout.swift in Sources */,
+				52662C052917264900584BDE /* ErrorResponseModel.swift in Sources */,
 				0747A39F28ECD29700CD5187 /* EventTypesViewModel.swift in Sources */,
 				0747A3BD28EDCFE600CD5187 /* EventTypeRepository.swift in Sources */,
 				0759792128EE139900EF2DFA /* Account.swift in Sources */,

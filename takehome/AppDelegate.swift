@@ -15,7 +15,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             fatalError("Personal Access Token file missing. Review README.md for setup instructions.")
         }
         
-        guard let pat = String(data:asset.data, encoding: .utf8) else {
+        guard let pat = String(data: asset.data, encoding: .utf8) else {
             fatalError("Personal Access Token file encoded incorrectly.")
         }
         
