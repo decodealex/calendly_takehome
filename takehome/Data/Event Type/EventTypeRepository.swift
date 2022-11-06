@@ -21,10 +21,7 @@ struct EventTypeRepository {
 
 extension EventTypeRepository: EventTypeRepositoryProtocol {
     mutating func getEventTypes(_ userURI: String) async throws -> [EventType] {
-        guard let eventTypes = eventTypes[userURI] else {
-            eventTypes[userURI] = try await dataSource.getEventTypes(userURI)
-            return eventTypes[userURI] ?? []
-        }
-        return eventTypes
+        eventTypes[userURI] = try await dataSource.getEventTypes(userURI)
+        return eventTypes[userURI] ?? []
     }
 }

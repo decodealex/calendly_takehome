@@ -6,6 +6,11 @@
 
 import Foundation
 
+protocol EventTypesViewModelDelegate: AnyObject {
+    func refreshEnded()
+    func displayError()
+}
+
 @MainActor
 class EventTypesViewModel {
     
@@ -13,25 +18,32 @@ class EventTypesViewModel {
     
     private var accountRepo: AccountRepositoryProtocol
     private var eventTypesRepo: EventTypeRepositoryProtocol
+    weak var delegate: EventTypesViewModelDelegate?
     
     private var account: Account?
     private var eventTypes: [EventType] = []
     
-    private var displayError: Bool = false
+    private var displayError: Bool = false {
+        didSet {
+            guard displayError else { return }
+            delegate?.displayError()
+        }
+    }
     
     var rowCount: Int {
         return eventTypes.count
     }
 
-    func viewLoaded() {
+    func fetchData(userInitiated: Bool = false) {
+        defer { delegate?.refreshEnded() }
+        
         Task {
             do {
-                account = try await accountRepo.getAccount()
+                if account == nil { account = try await accountRepo.getAccount() }
                 eventTypes = try await eventTypesRepo.getEventTypes(account?.uri ?? "")
                 refreshable?.refresh()
                 displayError = false
-            }
-            catch {
+            } catch {
                 displayError = true
             }
         }

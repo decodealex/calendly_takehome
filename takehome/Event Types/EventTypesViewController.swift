@@ -15,7 +15,8 @@ class EventTypesViewController: UIViewController {
         super.viewDidLoad()
         setupTableView()
         viewModel.refreshable = self
-        viewModel.viewLoaded()
+        viewModel.delegate = self
+        viewModel.fetchData()
     }
 
     private func setupTableView() {
@@ -28,6 +29,13 @@ class EventTypesViewController: UIViewController {
 
         tableView.delegate = self
         tableView.dataSource = self
+        
+        tableView.refreshControl = UIRefreshControl()
+        tableView.refreshControl?.addTarget(self, action: #selector(handleRefresh), for: .valueChanged)
+    }
+    
+    @objc private func handleRefresh() {
+        viewModel.fetchData(userInitiated: true)
     }
 }
 
@@ -55,5 +63,15 @@ protocol Refreshable { func refresh() }
 extension EventTypesViewController: Refreshable {
     func refresh() {
         tableView.reloadData()
+    }
+}
+
+extension EventTypesViewController: EventTypesViewModelDelegate {
+    func refreshEnded() {
+        tableView.refreshControl?.endRefreshing()
+    }
+    
+    func displayError() {
+        
     }
 }
