@@ -5,6 +5,7 @@
 //
 
 import Foundation
+import CalendlyNetworkService
 
 protocol EventTypeRemoteDataSourceProtocol {
     func getEventTypes(_ userURI: String) async throws -> [EventType]
@@ -25,8 +26,9 @@ struct EventTypeRemoteDataSource {
 
 extension EventTypeRemoteDataSource: EventTypeRemoteDataSourceProtocol {
     func getEventTypes(_ userURI: String) async throws -> [EventType] {
-        let data = try await networkManager.get("https://api.calendly.com/event_types?user=\(userURI)")
+        let data = try await networkManager.request(urlSession: .shared, endpoint: EventTypeEndpoint.getUserEvents(userURI))
         let eventTypesPayload = try decoder.decode(EventTypesPayload.self, from: data)
         return eventTypesPayload.collection
+        
     }
 }

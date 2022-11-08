@@ -24,14 +24,13 @@
 		0747A3BF28EDD03F00CD5187 /* EventTypeRemoteDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0747A3BE28EDD03F00CD5187 /* EventTypeRemoteDataSource.swift */; };
 		0747A3C128EDD25700CD5187 /* Date+Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0747A3C028EDD25700CD5187 /* Date+Utilities.swift */; };
 		0747A3C328EDD8EF00CD5187 /* EventType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0747A3C228EDD8EF00CD5187 /* EventType.swift */; };
-		075520B728EC69AC00B3A0A9 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 075520B628EC69AC00B3A0A9 /* NetworkManager.swift */; };
 		0759792128EE139900EF2DFA /* Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0759792028EE139900EF2DFA /* Account.swift */; };
 		0759792328EE13A500EF2DFA /* AccountRemoteDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0759792228EE13A500EF2DFA /* AccountRemoteDataSource.swift */; };
 		0759792528EE13B000EF2DFA /* AccountRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0759792428EE13B000EF2DFA /* AccountRepository.swift */; };
 		07CC135028F60A4C00CF08F3 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 07CC134F28F60A4C00CF08F3 /* README.md */; };
 		520CB62C2919FF11006082DB /* UIView+Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 520CB62B2919FF11006082DB /* UIView+Utilities.swift */; };
 		520CB62E2919FF3D006082DB /* UIStackView+Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 520CB62D2919FF3D006082DB /* UIStackView+Utilities.swift */; };
-		52662C052917264900584BDE /* ErrorResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52662C042917264900584BDE /* ErrorResponseModel.swift */; };
+		520CB642291AF695006082DB /* CalendlyNetworkService in Frameworks */ = {isa = PBXBuildFile; productRef = 520CB641291AF695006082DB /* CalendlyNetworkService */; };
 		52662C082917281A00584BDE /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52662C072917281A00584BDE /* Logger.swift */; };
 /* End PBXBuildFile section */
 
@@ -66,14 +65,12 @@
 		0747A3BE28EDD03F00CD5187 /* EventTypeRemoteDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventTypeRemoteDataSource.swift; sourceTree = "<group>"; };
 		0747A3C028EDD25700CD5187 /* Date+Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Utilities.swift"; sourceTree = "<group>"; };
 		0747A3C228EDD8EF00CD5187 /* EventType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventType.swift; sourceTree = "<group>"; };
-		075520B628EC69AC00B3A0A9 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		0759792028EE139900EF2DFA /* Account.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Account.swift; sourceTree = "<group>"; };
 		0759792228EE13A500EF2DFA /* AccountRemoteDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountRemoteDataSource.swift; sourceTree = "<group>"; };
 		0759792428EE13B000EF2DFA /* AccountRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountRepository.swift; sourceTree = "<group>"; };
 		07CC134F28F60A4C00CF08F3 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		520CB62B2919FF11006082DB /* UIView+Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Utilities.swift"; sourceTree = "<group>"; };
 		520CB62D2919FF3D006082DB /* UIStackView+Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStackView+Utilities.swift"; sourceTree = "<group>"; };
-		52662C042917264900584BDE /* ErrorResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorResponseModel.swift; sourceTree = "<group>"; };
 		52662C072917281A00584BDE /* Logger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -82,6 +79,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				520CB642291AF695006082DB /* CalendlyNetworkService in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -119,7 +117,6 @@
 			children = (
 				52662C062917280F00584BDE /* Utilities */,
 				0747A3BB28EDCF4900CD5187 /* Data */,
-				0747A3A828ECD3D700CD5187 /* NetworkManager */,
 				0747A39D28ECD25400CD5187 /* Event Types */,
 				0747A3AB28ECD56C00CD5187 /* Extensions */,
 				0714B16628E7E4C900E7F2BE /* AppDelegate.swift */,
@@ -148,15 +145,6 @@
 				0747A39E28ECD29700CD5187 /* EventTypesViewModel.swift */,
 			);
 			path = "Event Types";
-			sourceTree = "<group>";
-		};
-		0747A3A828ECD3D700CD5187 /* NetworkManager */ = {
-			isa = PBXGroup;
-			children = (
-				075520B628EC69AC00B3A0A9 /* NetworkManager.swift */,
-				52662C042917264900584BDE /* ErrorResponseModel.swift */,
-			);
-			path = NetworkManager;
 			sourceTree = "<group>";
 		};
 		0747A3AB28ECD56C00CD5187 /* Extensions */ = {
@@ -234,6 +222,9 @@
 			dependencies = (
 			);
 			name = takehome;
+			packageProductDependencies = (
+				520CB641291AF695006082DB /* CalendlyNetworkService */,
+			);
 			productName = takehome;
 			productReference = 0714B16328E7E4C900E7F2BE /* takehome.app */;
 			productType = "com.apple.product-type.application";
@@ -284,6 +275,9 @@
 				Base,
 			);
 			mainGroup = 0714B15A28E7E4C900E7F2BE;
+			packageReferences = (
+				520CB640291AF695006082DB /* XCRemoteSwiftPackageReference "CalendlyNetworkManager" */,
+			);
 			productRefGroup = 0714B16428E7E4C900E7F2BE /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -322,9 +316,7 @@
 			files = (
 				52662C082917281A00584BDE /* Logger.swift in Sources */,
 				0747A3C328EDD8EF00CD5187 /* EventType.swift in Sources */,
-				075520B728EC69AC00B3A0A9 /* NetworkManager.swift in Sources */,
 				0747A3B328ECD5A700CD5187 /* UIView+Autolayout.swift in Sources */,
-				52662C052917264900584BDE /* ErrorResponseModel.swift in Sources */,
 				0747A39F28ECD29700CD5187 /* EventTypesViewModel.swift in Sources */,
 				0747A3BD28EDCFE600CD5187 /* EventTypeRepository.swift in Sources */,
 				0759792128EE139900EF2DFA /* Account.swift in Sources */,
@@ -635,6 +627,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		520CB640291AF695006082DB /* XCRemoteSwiftPackageReference "CalendlyNetworkManager" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/decodealex/CalendlyNetworkManager.git";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		520CB641291AF695006082DB /* CalendlyNetworkService */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 520CB640291AF695006082DB /* XCRemoteSwiftPackageReference "CalendlyNetworkManager" */;
+			productName = CalendlyNetworkService;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 0714B15B28E7E4C900E7F2BE /* Project object */;
 }

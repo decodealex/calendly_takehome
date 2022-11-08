@@ -5,6 +5,7 @@
 //
 
 import Foundation
+import CalendlyNetworkService
 
 protocol AccountRemoteDataSourceProtocol {
     func getAccount() async throws -> Account
@@ -25,7 +26,7 @@ struct AccountRemoteDataSource {
 
 extension AccountRemoteDataSource: AccountRemoteDataSourceProtocol {
     func getAccount() async throws -> Account {
-        let data = try await networkManager.get("https://api.calendly.com/users/me")
+        let data = try await networkManager.request(urlSession: .shared, endpoint: UsersEndpoint.getCurrentUser)
         let accountPayload = try decoder.decode(AccountPayload.self, from: data)
         return accountPayload.resource
     }

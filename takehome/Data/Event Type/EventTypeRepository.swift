@@ -12,7 +12,7 @@ protocol EventTypeRepositoryProtocol {
 
 struct EventTypeRepository {
     private let dataSource: EventTypeRemoteDataSourceProtocol
-    private var eventTypes: [String:[EventType]] = [:]
+    private var eventTypes: [EventType] = []
     
     init(_ dataSource: EventTypeRemoteDataSourceProtocol? = nil) {
         self.dataSource = dataSource ?? EventTypeRemoteDataSource()
@@ -21,7 +21,7 @@ struct EventTypeRepository {
 
 extension EventTypeRepository: EventTypeRepositoryProtocol {
     mutating func getEventTypes(_ userURI: String) async throws -> [EventType] {
-        eventTypes[userURI] = try await dataSource.getEventTypes(userURI)
-        return eventTypes[userURI] ?? []
+        eventTypes = try await dataSource.getEventTypes(userURI)
+        return eventTypes
     }
 }

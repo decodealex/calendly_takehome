@@ -5,6 +5,7 @@
 //
 
 import Foundation
+import CalendlyNetworkService
 
 protocol AccountRepositoryProtocol {
     mutating func getAccount() async throws -> Account
@@ -23,7 +24,7 @@ extension AccountRepository: AccountRepositoryProtocol {
     mutating func getAccount() async throws -> Account {
         guard let account = account else {
             account = try await dataSource.getAccount()
-            if account == nil { throw APIError.generic(message: "Unknown error retrieving Account information.") }
+            if account == nil { throw NetworkError.generic(description: "Unknown error retrieving Account information.") }
             return account!
         }
         return account

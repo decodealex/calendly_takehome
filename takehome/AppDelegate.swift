@@ -4,6 +4,7 @@
 //
 
 import UIKit
+import CalendlyNetworkService
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
