@@ -10,6 +10,8 @@ extension UITableView {
     func register<T: UITableViewCell>(_: T.Type) where T: ReusableView {
         if let nib = T.nib {
             register(nib, forCellReuseIdentifier: T.defaultReusableIdentifier)
+        } else {
+            register(T.self, forCellReuseIdentifier: T.defaultReusableIdentifier)
         }
     }
 

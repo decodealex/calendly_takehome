@@ -20,7 +20,6 @@
 		0747A3B228ECD5A700CD5187 /* UIView+ReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0747A3B028ECD5A700CD5187 /* UIView+ReusableView.swift */; };
 		0747A3B328ECD5A700CD5187 /* UIView+Autolayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0747A3B128ECD5A700CD5187 /* UIView+Autolayout.swift */; };
 		0747A3B928ECD62400CD5187 /* EventTypeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0747A3B728ECD62400CD5187 /* EventTypeTableViewCell.swift */; };
-		0747A3BA28ECD62400CD5187 /* EventTypeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0747A3B828ECD62400CD5187 /* EventTypeTableViewCell.xib */; };
 		0747A3BD28EDCFE600CD5187 /* EventTypeRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0747A3BC28EDCFE600CD5187 /* EventTypeRepository.swift */; };
 		0747A3BF28EDD03F00CD5187 /* EventTypeRemoteDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0747A3BE28EDD03F00CD5187 /* EventTypeRemoteDataSource.swift */; };
 		0747A3C128EDD25700CD5187 /* Date+Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0747A3C028EDD25700CD5187 /* Date+Utilities.swift */; };
@@ -30,6 +29,8 @@
 		0759792328EE13A500EF2DFA /* AccountRemoteDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0759792228EE13A500EF2DFA /* AccountRemoteDataSource.swift */; };
 		0759792528EE13B000EF2DFA /* AccountRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0759792428EE13B000EF2DFA /* AccountRepository.swift */; };
 		07CC135028F60A4C00CF08F3 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 07CC134F28F60A4C00CF08F3 /* README.md */; };
+		520CB62C2919FF11006082DB /* UIView+Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 520CB62B2919FF11006082DB /* UIView+Utilities.swift */; };
+		520CB62E2919FF3D006082DB /* UIStackView+Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 520CB62D2919FF3D006082DB /* UIStackView+Utilities.swift */; };
 		52662C052917264900584BDE /* ErrorResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52662C042917264900584BDE /* ErrorResponseModel.swift */; };
 		52662C082917281A00584BDE /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52662C072917281A00584BDE /* Logger.swift */; };
 /* End PBXBuildFile section */
@@ -61,7 +62,6 @@
 		0747A3B028ECD5A700CD5187 /* UIView+ReusableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+ReusableView.swift"; sourceTree = "<group>"; };
 		0747A3B128ECD5A700CD5187 /* UIView+Autolayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Autolayout.swift"; sourceTree = "<group>"; };
 		0747A3B728ECD62400CD5187 /* EventTypeTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventTypeTableViewCell.swift; sourceTree = "<group>"; };
-		0747A3B828ECD62400CD5187 /* EventTypeTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EventTypeTableViewCell.xib; sourceTree = "<group>"; };
 		0747A3BC28EDCFE600CD5187 /* EventTypeRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventTypeRepository.swift; sourceTree = "<group>"; };
 		0747A3BE28EDD03F00CD5187 /* EventTypeRemoteDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventTypeRemoteDataSource.swift; sourceTree = "<group>"; };
 		0747A3C028EDD25700CD5187 /* Date+Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Utilities.swift"; sourceTree = "<group>"; };
@@ -71,6 +71,8 @@
 		0759792228EE13A500EF2DFA /* AccountRemoteDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountRemoteDataSource.swift; sourceTree = "<group>"; };
 		0759792428EE13B000EF2DFA /* AccountRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountRepository.swift; sourceTree = "<group>"; };
 		07CC134F28F60A4C00CF08F3 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		520CB62B2919FF11006082DB /* UIView+Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Utilities.swift"; sourceTree = "<group>"; };
+		520CB62D2919FF3D006082DB /* UIStackView+Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStackView+Utilities.swift"; sourceTree = "<group>"; };
 		52662C042917264900584BDE /* ErrorResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorResponseModel.swift; sourceTree = "<group>"; };
 		52662C072917281A00584BDE /* Logger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -165,6 +167,8 @@
 				0747A3AE28ECD59800CD5187 /* UITableView+Utilities.swift */,
 				0747A3AC28ECD58300CD5187 /* String+UIColor.swift */,
 				0747A3C028EDD25700CD5187 /* Date+Utilities.swift */,
+				520CB62B2919FF11006082DB /* UIView+Utilities.swift */,
+				520CB62D2919FF3D006082DB /* UIStackView+Utilities.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -173,7 +177,6 @@
 			isa = PBXGroup;
 			children = (
 				0747A3B728ECD62400CD5187 /* EventTypeTableViewCell.swift */,
-				0747A3B828ECD62400CD5187 /* EventTypeTableViewCell.xib */,
 			);
 			path = EventTypeTableViewCell;
 			sourceTree = "<group>";
@@ -299,7 +302,6 @@
 				0747A39C28ECCDE100CD5187 /* Main.storyboard in Resources */,
 				0714B17328E7E4CA00E7F2BE /* LaunchScreen.storyboard in Resources */,
 				07CC135028F60A4C00CF08F3 /* README.md in Resources */,
-				0747A3BA28ECD62400CD5187 /* EventTypeTableViewCell.xib in Resources */,
 				0714B17028E7E4CA00E7F2BE /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -330,8 +332,10 @@
 				0747A3BF28EDD03F00CD5187 /* EventTypeRemoteDataSource.swift in Sources */,
 				0747A3C128EDD25700CD5187 /* Date+Utilities.swift in Sources */,
 				0747A3B928ECD62400CD5187 /* EventTypeTableViewCell.swift in Sources */,
+				520CB62E2919FF3D006082DB /* UIStackView+Utilities.swift in Sources */,
 				0714B16728E7E4C900E7F2BE /* AppDelegate.swift in Sources */,
 				0747A3AD28ECD58300CD5187 /* String+UIColor.swift in Sources */,
+				520CB62C2919FF11006082DB /* UIView+Utilities.swift in Sources */,
 				0759792328EE13A500EF2DFA /* AccountRemoteDataSource.swift in Sources */,
 				0714B16928E7E4C900E7F2BE /* SceneDelegate.swift in Sources */,
 				0747A3B228ECD5A700CD5187 /* UIView+ReusableView.swift in Sources */,

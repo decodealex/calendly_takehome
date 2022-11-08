@@ -53,6 +53,10 @@ class EventTypesViewModel {
         guard eventTypes.count > indexPath.row else { return "" }
         return eventTypes[indexPath.row].name
     }
+    
+    func event(for indexPath: IndexPath) -> EventType {
+        return eventTypes[indexPath.row]
+    }
 
     func color(for indexPath: IndexPath) -> String? {
         guard eventTypes.count > indexPath.row else { return nil }

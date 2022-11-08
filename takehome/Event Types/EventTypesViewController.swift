@@ -18,6 +18,12 @@ class EventTypesViewController: UIViewController {
         viewModel.delegate = self
         viewModel.fetchData()
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        viewModel.fetchData()
+    }
 
     private func setupTableView() {
         view.addSubview(tableView)
@@ -25,7 +31,7 @@ class EventTypesViewController: UIViewController {
 
         tableView.separatorStyle = .none
 
-        tableView.register(EventTypeTableViewCell.self)
+        tableView.register(EventTypeTableViewCell2.self)
 
         tableView.delegate = self
         tableView.dataSource = self
@@ -40,16 +46,21 @@ class EventTypesViewController: UIViewController {
 }
 
 extension EventTypesViewController: UITableViewDataSource {
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return viewModel.rowCount
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell: EventTypeTableViewCell = tableView.dequeueReusableCell(indexPath)
-        cell.nameLabel.text = viewModel.name(for: indexPath)
-        cell.colorView.backgroundColor = viewModel.color(for: indexPath)?.color ?? .clear
+        let cell: EventTypeTableViewCell2 = tableView.dequeueReusableCell(indexPath)
+        cell.setupWith(viewModel.event(for: indexPath))
         return cell
     }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        UITableView.automaticDimension
+    }
+
 }
 
 extension EventTypesViewController: UITableViewDelegate {

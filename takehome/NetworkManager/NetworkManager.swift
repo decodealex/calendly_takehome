@@ -35,6 +35,7 @@ extension NetworkManager: NetworkManagerProtocol {
         Logger.log(.debug, message: "NetworkManager received data: \(String(data: data, encoding: .utf8))")
         if let response = response as? HTTPURLResponse, response.statusCode != 200 {
             let error = try JSONDecoder().decode(ErrorResponseModel.self, from: data)
+            Logger.log(.error, message: "NetworkManager received data: \(String(data: data, encoding: .utf8))")
             throw APIError.generic(message: error.description)
         }
         return data

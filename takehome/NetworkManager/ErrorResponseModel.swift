@@ -12,6 +12,6 @@ struct ErrorResponseModel: Decodable {
     private let message: String
     
     var description: String {
-         "\n 🚨\n \n Error title: \(title);\n Message: \(message)"
+         "\n Error title: \(title);\n Message: \(message)"
     }
 }
