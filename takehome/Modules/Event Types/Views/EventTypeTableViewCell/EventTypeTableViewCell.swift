@@ -133,13 +133,11 @@ class EventTypeTableViewCell: UITableViewCell {
         colorView.backgroundColor = event.active ? event.color.color ?? .clear : .systemGray
         eventInfoLabel.text = String(event.duration) + " • " + event.kind.title
         eventNameLabel.text = event.name
-        eventLinkButton.set(title: "View booking page", link: "")
-        
+        eventLinkButton.set(title: "View booking page")
     }
     
     @objc func handleButtonAction() {
         delegate?.didTapBookingPageButton(self)
-        
     }
 }
 

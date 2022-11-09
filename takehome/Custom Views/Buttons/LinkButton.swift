@@ -14,18 +14,15 @@ class LinkButton: UIButton {
         configure()
     }
     
-    
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
     
     convenience init(backgroudColor: UIColor, title: String) {
         self.init(frame: .zero)
         backgroundColor = backgroudColor
         setTitle(title, for: .normal)
     }
-    
     
     private func configure() {
         setTitleColor(.systemBlue, for: .normal)
@@ -37,9 +34,7 @@ class LinkButton: UIButton {
         layer.cornerRadius = 10
     }
     
-    
-    func set(title: String, link: String) {
+    func set(title: String) {
         setTitle(title, for: .normal)
-
     }
 }

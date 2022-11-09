@@ -129,5 +129,4 @@ extension EventTypesViewController: EventTypesHeaderViewDelegate {
     }
 }
 
-
 protocol Refreshable { func refresh() }

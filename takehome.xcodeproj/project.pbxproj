@@ -41,7 +41,6 @@
 		520CB678291B33F4006082DB /* user.json in Resources */ = {isa = PBXBuildFile; fileRef = 520CB677291B33F4006082DB /* user.json */; };
 		520CB67C291B34B9006082DB /* event_type.json in Resources */ = {isa = PBXBuildFile; fileRef = 520CB67B291B34B9006082DB /* event_type.json */; };
 		520CB67E291B3711006082DB /* JSONMappingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 520CB67D291B3711006082DB /* JSONMappingTests.swift */; };
-		52662C082917281A00584BDE /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52662C072917281A00584BDE /* Logger.swift */; };
 		5294E4BD291B3DC600A7303A /* AccountRemoteDataSourceTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5294E4BC291B3DC600A7303A /* AccountRemoteDataSourceTest.swift */; };
 		5294E4BF291B3DE700A7303A /* MockNetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5294E4BE291B3DE700A7303A /* MockNetworkService.swift */; };
 		5294E4C2291B476000A7303A /* TestError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5294E4C1291B476000A7303A /* TestError.swift */; };
@@ -105,7 +104,6 @@
 		520CB677291B33F4006082DB /* user.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = user.json; sourceTree = "<group>"; };
 		520CB67B291B34B9006082DB /* event_type.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = event_type.json; sourceTree = "<group>"; };
 		520CB67D291B3711006082DB /* JSONMappingTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONMappingTests.swift; sourceTree = "<group>"; };
-		52662C072917281A00584BDE /* Logger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
 		5294E4BC291B3DC600A7303A /* AccountRemoteDataSourceTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountRemoteDataSourceTest.swift; sourceTree = "<group>"; };
 		5294E4BE291B3DE700A7303A /* MockNetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockNetworkService.swift; sourceTree = "<group>"; };
 		5294E4C1291B476000A7303A /* TestError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestError.swift; sourceTree = "<group>"; };
@@ -165,7 +163,6 @@
 			children = (
 				5294E4DE291B5CAB00A7303A /* Modules */,
 				520CB646291AFCF8006082DB /* Custom Views */,
-				52662C062917280F00584BDE /* Utilities */,
 				0747A3BB28EDCF4900CD5187 /* Data */,
 				0747A3AB28ECD56C00CD5187 /* Extensions */,
 				0714B16628E7E4C900E7F2BE /* AppDelegate.swift */,
@@ -306,14 +303,6 @@
 				520CB67B291B34B9006082DB /* event_type.json */,
 			);
 			path = TestData;
-			sourceTree = "<group>";
-		};
-		52662C062917280F00584BDE /* Utilities */ = {
-			isa = PBXGroup;
-			children = (
-				52662C072917281A00584BDE /* Logger.swift */,
-			);
-			path = Utilities;
 			sourceTree = "<group>";
 		};
 		5294E4BA291B3D9400A7303A /* Data */ = {
@@ -532,7 +521,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				52662C082917281A00584BDE /* Logger.swift in Sources */,
 				0747A3C328EDD8EF00CD5187 /* EventType.swift in Sources */,
 				5294E4E3291B694700A7303A /* AccountViewController.swift in Sources */,
 				0747A3B328ECD5A700CD5187 /* UIView+Autolayout.swift in Sources */,
