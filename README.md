@@ -16,7 +16,7 @@ I focused on modularity and extensibility.
 - DI injection relies on protocols, and not on objects, so we can easily inject another object (for example, for testing purposes)
 - UI elements are created with reusability potential. 
 - Implemented refresh functionality for ET
-- Updated ET view to llok more like Calendly app
+- Updated ET view to look more like Calendly app
 - Removed duplicated code from DataStores
 - Implemented Unit tests for DataStores, JSONMapping, ViewModel (basic test cases) 
 - WIP: Account view. Unfortunately I didnt have enough time to finish this module. Only basic UI is implemented 
