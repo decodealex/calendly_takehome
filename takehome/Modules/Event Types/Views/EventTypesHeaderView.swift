@@ -84,8 +84,7 @@ class EventTypesHeaderView: UIView {
     
     func setupWith(_ account: Account) {
         nameLabel.text = account.name
-        linkButton.set(title: account.schedulingUrl.deletingPrefix("https://"),
-                       link: account.schedulingUrl)
+        linkButton.set(title: account.schedulingUrl.deletingPrefix("https://"))
         
         imageView.tintColor = .systemGray
         imageView.image = UIImage.letterImage(from: account.name)
