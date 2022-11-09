@@ -53,6 +53,9 @@
 		5294E4D4291B4E3C00A7303A /* MockEventTypeRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5294E4D3291B4E3C00A7303A /* MockEventTypeRepository.swift */; };
 		5294E4DB291B4EEE00A7303A /* MockAccountRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5294E4DA291B4EEE00A7303A /* MockAccountRepository.swift */; };
 		5294E4DD291B4F2400A7303A /* MockAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5294E4DC291B4F2400A7303A /* MockAccount.swift */; };
+		5294E4E1291B5CC100A7303A /* AccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5294E4E0291B5CC100A7303A /* AccountView.swift */; };
+		5294E4E3291B694700A7303A /* AccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5294E4E2291B694700A7303A /* AccountViewController.swift */; };
+		5294E4E5291B6C3E00A7303A /* AccountViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5294E4E4291B6C3E00A7303A /* AccountViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -114,6 +117,9 @@
 		5294E4D3291B4E3C00A7303A /* MockEventTypeRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockEventTypeRepository.swift; sourceTree = "<group>"; };
 		5294E4DA291B4EEE00A7303A /* MockAccountRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockAccountRepository.swift; sourceTree = "<group>"; };
 		5294E4DC291B4F2400A7303A /* MockAccount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockAccount.swift; sourceTree = "<group>"; };
+		5294E4E0291B5CC100A7303A /* AccountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountView.swift; sourceTree = "<group>"; };
+		5294E4E2291B694700A7303A /* AccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountViewController.swift; sourceTree = "<group>"; };
+		5294E4E4291B6C3E00A7303A /* AccountViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -157,10 +163,10 @@
 		0714B16528E7E4C900E7F2BE /* takehome */ = {
 			isa = PBXGroup;
 			children = (
+				5294E4DE291B5CAB00A7303A /* Modules */,
 				520CB646291AFCF8006082DB /* Custom Views */,
 				52662C062917280F00584BDE /* Utilities */,
 				0747A3BB28EDCF4900CD5187 /* Data */,
-				0747A39D28ECD25400CD5187 /* Event Types */,
 				0747A3AB28ECD56C00CD5187 /* Extensions */,
 				0714B16628E7E4C900E7F2BE /* AppDelegate.swift */,
 				0714B16828E7E4C900E7F2BE /* SceneDelegate.swift */,
@@ -397,6 +403,25 @@
 			path = MockObjects;
 			sourceTree = "<group>";
 		};
+		5294E4DE291B5CAB00A7303A /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				5294E4DF291B5CB300A7303A /* Account */,
+				0747A39D28ECD25400CD5187 /* Event Types */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		5294E4DF291B5CB300A7303A /* Account */ = {
+			isa = PBXGroup;
+			children = (
+				5294E4E0291B5CC100A7303A /* AccountView.swift */,
+				5294E4E2291B694700A7303A /* AccountViewController.swift */,
+				5294E4E4291B6C3E00A7303A /* AccountViewModel.swift */,
+			);
+			path = Account;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -509,10 +534,12 @@
 			files = (
 				52662C082917281A00584BDE /* Logger.swift in Sources */,
 				0747A3C328EDD8EF00CD5187 /* EventType.swift in Sources */,
+				5294E4E3291B694700A7303A /* AccountViewController.swift in Sources */,
 				0747A3B328ECD5A700CD5187 /* UIView+Autolayout.swift in Sources */,
 				520CB649291AFD0D006082DB /* LinkButton.swift in Sources */,
 				0747A39F28ECD29700CD5187 /* EventTypesViewModel.swift in Sources */,
 				0747A3BD28EDCFE600CD5187 /* EventTypeRepository.swift in Sources */,
+				5294E4E1291B5CC100A7303A /* AccountView.swift in Sources */,
 				520CB64F291B12EB006082DB /* UIViewController+Safari.swift in Sources */,
 				0759792128EE139900EF2DFA /* Account.swift in Sources */,
 				0747A3A128ECD2BB00CD5187 /* EventTypesViewController.swift in Sources */,
@@ -527,6 +554,7 @@
 				0759792328EE13A500EF2DFA /* AccountRemoteDataSource.swift in Sources */,
 				520CB64B291B124F006082DB /* UIImage+Helpers.swift in Sources */,
 				520CB651291B27DF006082DB /* JSONDecoder+DefaultDecoder.swift in Sources */,
+				5294E4E5291B6C3E00A7303A /* AccountViewModel.swift in Sources */,
 				0714B16928E7E4C900E7F2BE /* SceneDelegate.swift in Sources */,
 				0747A3B228ECD5A700CD5187 /* UIView+ReusableView.swift in Sources */,
 				520CB64D291B1263006082DB /* String+Utilities.swift in Sources */,
