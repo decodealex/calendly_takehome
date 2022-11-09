@@ -15,12 +15,9 @@ struct EventTypeRemoteDataSource {
     private let networkManager: NetworkManagerProtocol
     private let decoder: JSONDecoder
     
-    init(_ networkManager: NetworkManagerProtocol = NetworkManager.shared) {
+    init(_ networkManager: NetworkManagerProtocol = NetworkManager.shared, decoder: JSONDecoder = .defaultDecoder) {
         self.networkManager = networkManager
-        
-        decoder = JSONDecoder()
-        decoder.dateDecodingStrategy = .formatted(Date.iso8601FractionalSecondsFormatter)
-        decoder.keyDecodingStrategy = .convertFromSnakeCase
+        self.decoder = decoder
     }
 }
 

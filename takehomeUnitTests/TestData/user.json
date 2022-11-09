@@ -1,0 +1,14 @@
+{
+    "resource": {
+        "avatar_url": null,
+        "created_at": "2022-09-02T19:49:55.236158Z",
+        "current_organization": "https://api.calendly.com/organizations/1a76c006-0d02-4dd5-b016-7a5b0d938cb0",
+        "email": "test@gmail.com",
+        "name": "Test User",
+        "scheduling_url": "https://calendly.com/test_user",
+        "slug": "decode_alex",
+        "timezone": "America/Los_Angeles",
+        "updated_at": "2022-11-05T23:43:12.243979Z",
+        "uri": "https://api.calendly.com/users/ef1ddf97-4678-4acd-bd2c-6c0546852fa2"
+    }
+}

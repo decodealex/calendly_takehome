@@ -6,7 +6,7 @@
 
 import Foundation
 
-struct EventType: Decodable {
+struct EventType: Decodable, Equatable {
     let name: String
     let color: String
     let duration: Int
@@ -18,6 +18,7 @@ struct EventType: Decodable {
 
 struct EventTypesPayload: Decodable {
     let collection: [EventType]
+    let pagination: Pagination
 }
 
 enum EventKind: String, Decodable {
