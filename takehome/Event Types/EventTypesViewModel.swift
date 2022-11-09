@@ -9,6 +9,7 @@ import Foundation
 protocol EventTypesViewModelDelegate: AnyObject {
     func refreshEnded()
     func displayError()
+    func openLink(_ link: URL)
 }
 
 @MainActor
@@ -40,7 +41,9 @@ class EventTypesViewModel {
         Task {
             do {
                 if account == nil { account = try await accountRepo.getAccount() }
-                eventTypes = try await eventTypesRepo.getEventTypes(account?.uri ?? "")
+                eventTypes = try await eventTypesRepo
+                    .getEventTypes(account?.uri ?? "")
+                    .sorted(by: { $0.active && !$1.active })
                 refreshable?.refresh()
                 displayError = false
             } catch {
@@ -61,6 +64,22 @@ class EventTypesViewModel {
     func color(for indexPath: IndexPath) -> String? {
         guard eventTypes.count > indexPath.row else { return nil }
         return eventTypes[indexPath.row].color
+    }
+    
+    func getAccount() -> Account? {
+        return account
+    }
+    
+    func didTapBookingPageButton(at indexPath: IndexPath) {
+        let link = eventTypes[indexPath.row].schedulingUrl
+        guard let url = URL(string: link) else { return }
+        delegate?.openLink(url)
+    }
+    
+    
+    func didTapHeaderLink() {
+        guard let link = account?.schedulingUrl, let url = URL(string: link) else { return }
+        delegate?.openLink(url)
     }
 
     init(_ accountRepo: AccountRepositoryProtocol = AccountRepository(),

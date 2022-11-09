@@ -31,6 +31,11 @@
 		520CB62C2919FF11006082DB /* UIView+Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 520CB62B2919FF11006082DB /* UIView+Utilities.swift */; };
 		520CB62E2919FF3D006082DB /* UIStackView+Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 520CB62D2919FF3D006082DB /* UIStackView+Utilities.swift */; };
 		520CB642291AF695006082DB /* CalendlyNetworkService in Frameworks */ = {isa = PBXBuildFile; productRef = 520CB641291AF695006082DB /* CalendlyNetworkService */; };
+		520CB645291AFB93006082DB /* EventTypesHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 520CB644291AFB93006082DB /* EventTypesHeaderView.swift */; };
+		520CB649291AFD0D006082DB /* LinkButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 520CB648291AFD0D006082DB /* LinkButton.swift */; };
+		520CB64B291B124F006082DB /* UIImage+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 520CB64A291B124F006082DB /* UIImage+Helpers.swift */; };
+		520CB64D291B1263006082DB /* String+Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 520CB64C291B1263006082DB /* String+Utilities.swift */; };
+		520CB64F291B12EB006082DB /* UIViewController+Safari.swift in Sources */ = {isa = PBXBuildFile; fileRef = 520CB64E291B12EB006082DB /* UIViewController+Safari.swift */; };
 		52662C082917281A00584BDE /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52662C072917281A00584BDE /* Logger.swift */; };
 /* End PBXBuildFile section */
 
@@ -71,6 +76,11 @@
 		07CC134F28F60A4C00CF08F3 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		520CB62B2919FF11006082DB /* UIView+Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Utilities.swift"; sourceTree = "<group>"; };
 		520CB62D2919FF3D006082DB /* UIStackView+Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStackView+Utilities.swift"; sourceTree = "<group>"; };
+		520CB644291AFB93006082DB /* EventTypesHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventTypesHeaderView.swift; sourceTree = "<group>"; };
+		520CB648291AFD0D006082DB /* LinkButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkButton.swift; sourceTree = "<group>"; };
+		520CB64A291B124F006082DB /* UIImage+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Helpers.swift"; sourceTree = "<group>"; };
+		520CB64C291B1263006082DB /* String+Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Utilities.swift"; sourceTree = "<group>"; };
+		520CB64E291B12EB006082DB /* UIViewController+Safari.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Safari.swift"; sourceTree = "<group>"; };
 		52662C072917281A00584BDE /* Logger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -115,6 +125,7 @@
 		0714B16528E7E4C900E7F2BE /* takehome */ = {
 			isa = PBXGroup;
 			children = (
+				520CB646291AFCF8006082DB /* CustomViews */,
 				52662C062917280F00584BDE /* Utilities */,
 				0747A3BB28EDCF4900CD5187 /* Data */,
 				0747A39D28ECD25400CD5187 /* Event Types */,
@@ -140,7 +151,7 @@
 		0747A39D28ECD25400CD5187 /* Event Types */ = {
 			isa = PBXGroup;
 			children = (
-				0747A3B628ECD60100CD5187 /* EventTypeTableViewCell */,
+				520CB643291AFB7A006082DB /* Views */,
 				0747A3A028ECD2BB00CD5187 /* EventTypesViewController.swift */,
 				0747A39E28ECD29700CD5187 /* EventTypesViewModel.swift */,
 			);
@@ -157,6 +168,9 @@
 				0747A3C028EDD25700CD5187 /* Date+Utilities.swift */,
 				520CB62B2919FF11006082DB /* UIView+Utilities.swift */,
 				520CB62D2919FF3D006082DB /* UIStackView+Utilities.swift */,
+				520CB64A291B124F006082DB /* UIImage+Helpers.swift */,
+				520CB64C291B1263006082DB /* String+Utilities.swift */,
+				520CB64E291B12EB006082DB /* UIViewController+Safari.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -196,6 +210,31 @@
 				0759792028EE139900EF2DFA /* Account.swift */,
 			);
 			path = Account;
+			sourceTree = "<group>";
+		};
+		520CB643291AFB7A006082DB /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				0747A3B628ECD60100CD5187 /* EventTypeTableViewCell */,
+				520CB644291AFB93006082DB /* EventTypesHeaderView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		520CB646291AFCF8006082DB /* CustomViews */ = {
+			isa = PBXGroup;
+			children = (
+				520CB647291AFCFE006082DB /* Buttons */,
+			);
+			path = CustomViews;
+			sourceTree = "<group>";
+		};
+		520CB647291AFCFE006082DB /* Buttons */ = {
+			isa = PBXGroup;
+			children = (
+				520CB648291AFD0D006082DB /* LinkButton.swift */,
+			);
+			path = Buttons;
 			sourceTree = "<group>";
 		};
 		52662C062917280F00584BDE /* Utilities */ = {
@@ -317,11 +356,14 @@
 				52662C082917281A00584BDE /* Logger.swift in Sources */,
 				0747A3C328EDD8EF00CD5187 /* EventType.swift in Sources */,
 				0747A3B328ECD5A700CD5187 /* UIView+Autolayout.swift in Sources */,
+				520CB649291AFD0D006082DB /* LinkButton.swift in Sources */,
 				0747A39F28ECD29700CD5187 /* EventTypesViewModel.swift in Sources */,
 				0747A3BD28EDCFE600CD5187 /* EventTypeRepository.swift in Sources */,
+				520CB64F291B12EB006082DB /* UIViewController+Safari.swift in Sources */,
 				0759792128EE139900EF2DFA /* Account.swift in Sources */,
 				0747A3A128ECD2BB00CD5187 /* EventTypesViewController.swift in Sources */,
 				0747A3BF28EDD03F00CD5187 /* EventTypeRemoteDataSource.swift in Sources */,
+				520CB645291AFB93006082DB /* EventTypesHeaderView.swift in Sources */,
 				0747A3C128EDD25700CD5187 /* Date+Utilities.swift in Sources */,
 				0747A3B928ECD62400CD5187 /* EventTypeTableViewCell.swift in Sources */,
 				520CB62E2919FF3D006082DB /* UIStackView+Utilities.swift in Sources */,
@@ -329,8 +371,10 @@
 				0747A3AD28ECD58300CD5187 /* String+UIColor.swift in Sources */,
 				520CB62C2919FF11006082DB /* UIView+Utilities.swift in Sources */,
 				0759792328EE13A500EF2DFA /* AccountRemoteDataSource.swift in Sources */,
+				520CB64B291B124F006082DB /* UIImage+Helpers.swift in Sources */,
 				0714B16928E7E4C900E7F2BE /* SceneDelegate.swift in Sources */,
 				0747A3B228ECD5A700CD5187 /* UIView+ReusableView.swift in Sources */,
+				520CB64D291B1263006082DB /* String+Utilities.swift in Sources */,
 				0747A3AF28ECD59800CD5187 /* UITableView+Utilities.swift in Sources */,
 				0759792528EE13B000EF2DFA /* AccountRepository.swift in Sources */,
 			);

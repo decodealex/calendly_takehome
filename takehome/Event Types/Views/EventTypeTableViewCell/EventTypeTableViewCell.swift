@@ -6,14 +6,20 @@
 
 import UIKit
 
-class EventTypeTableViewCell2: UITableViewCell {
+protocol EventTypeTableViewCellDelegate: AnyObject {
+    func didTapBookingPageButton(_ sender: EventTypeTableViewCell)
+}
+
+class EventTypeTableViewCell: UITableViewCell {
+    
+    weak var delegate: EventTypeTableViewCellDelegate?
     
     private let shadowContainer: UIView = {
-       let view = UIView()
+        let view = UIView()
         view.layer.cornerRadius = 5
-        view.layer.shadowRadius = 4.0
+        view.layer.shadowRadius = 3.0
         view.layer.shadowOpacity = 0.3
-        view.layer.shadowColor = UIColor.lightGray.cgColor
+        view.layer.shadowColor = UIColor.systemGray.cgColor
         view.layer.shadowOffset = CGSize(width: 0, height: -3)
         view.translatesAutoresizingMaskIntoConstraints = false
         view.backgroundColor = .systemBackground
@@ -21,7 +27,7 @@ class EventTypeTableViewCell2: UITableViewCell {
     }()
     
     private let containerView: UIView = {
-       let view = UIView()
+        let view = UIView()
         view.layer.cornerRadius = 5
         view.layer.masksToBounds = true
         view.translatesAutoresizingMaskIntoConstraints = false
@@ -59,24 +65,17 @@ class EventTypeTableViewCell2: UITableViewCell {
     }()
     
     private let eventsStackView: UIStackView = {
-       let stackView = UIStackView()
+        let stackView = UIStackView()
         stackView.translatesAutoresizingMaskIntoConstraints = false
         stackView.axis = .vertical
         stackView.spacing = 5
+        stackView.isUserInteractionEnabled = true
         
         return stackView
     }()
-
-    private let eventLinkButton: UIButton = {
-       let button = UIButton()
-        button.setTitleColor(.systemBlue, for: .normal)
-        button.setTitle("View booking page", for: .normal)
-        button.titleLabel?.font = .systemFont(ofSize: 15, weight: .regular)
-        button.contentHorizontalAlignment = .leading
-        
-        let imageConfig = UIImage.SymbolConfiguration(scale: .small)
-        button.setImage(UIImage(systemName: "arrow.up.right", withConfiguration: imageConfig), for: .normal)
-        
+    
+    private let eventLinkButton: LinkButton = {
+        let button = LinkButton()
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
     }()
@@ -84,15 +83,23 @@ class EventTypeTableViewCell2: UITableViewCell {
     override init(style: UITableViewCell.CellStyle = .default, reuseIdentifier: String? = defaultReusableIdentifier) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
+        layoutViews()
         configure()
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-
+    
     private func configure() {
-        addSubview(shadowContainer)
+        isUserInteractionEnabled = true
+        eventLinkButton.addTarget(self, action: #selector(handleButtonAction), for: .touchUpInside)
+        backgroundColor = .clear
+    }
+    
+    private func layoutViews() {
+        contentView.addSubview(shadowContainer)
+        
         shadowContainer.addSubview(containerView)
         containerView.pinEdgesToParent()
         containerView.addSubviews(colorView, eventsStackView, eventLinkButton)
@@ -101,10 +108,10 @@ class EventTypeTableViewCell2: UITableViewCell {
         let horizontalPadding: CGFloat = 15.0
         let containerPadding: CGFloat = 15.0
         NSLayoutConstraint.activate([
-            shadowContainer.topAnchor.constraint(equalTo: topAnchor, constant: containerPadding),
-            shadowContainer.leadingAnchor.constraint(equalTo: leadingAnchor, constant: containerPadding),
-            shadowContainer.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -containerPadding),
-            shadowContainer.bottomAnchor.constraint(equalTo: bottomAnchor, constant: 0),
+            shadowContainer.topAnchor.constraint(equalTo: contentView.topAnchor, constant: containerPadding),
+            shadowContainer.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: containerPadding),
+            shadowContainer.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -containerPadding),
+            shadowContainer.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: 0),
          
             colorView.topAnchor.constraint(equalTo: containerView.topAnchor),
             colorView.leadingAnchor.constraint(equalTo: containerView.leadingAnchor),
@@ -123,11 +130,17 @@ class EventTypeTableViewCell2: UITableViewCell {
     }
     
     func setupWith(_ event: EventType) {
-        colorView.backgroundColor = event.color.color ?? .clear
+        colorView.backgroundColor = event.active ? event.color.color ?? .clear : .systemGray
         eventInfoLabel.text = String(event.duration) + " • " + event.kind.title
         eventNameLabel.text = event.name
+        eventLinkButton.set(title: "View booking page", link: "")
+        
     }
-
+    
+    @objc func handleButtonAction() {
+        delegate?.didTapBookingPageButton(self)
+        
+    }
 }
 
-extension EventTypeTableViewCell2: ReusableView { }
+extension EventTypeTableViewCell: ReusableView { }
