@@ -2,9 +2,9 @@ name: Swift
 
 on:
   push:
-    branches: [ "main" ]
+    branches: [ main ]
   pull_request:
-    branches: [ "main" ]
+    branches: [ main ]
 
 jobs:
   build:
@@ -12,12 +12,6 @@ jobs:
     runs-on: macos-latest
 
     steps:
-      - name: Checkout
+      - name: Run tests
         uses: actions/checkout@v3
-      - name: Test
-        env:
-          scheme: 'takehome'
-          platform: ${{ 'iOS Simulator' }}
-        run: |
-          device=`xcrun xctrace list devices 2>&1 | grep -oE 'iPhone.*?[^\(]+' | head -1 | awk '{$1=$1;print}' | sed -e "s/ Simulator$//"`
-          xcodebuild test -scheme "takehome"  -destination "platform=iOS Simulator,name=$device"
+      run: xcodebuild test -scheme "takehome" -destination "platform=iOS Simulator,name=iPhone 14"
